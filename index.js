@@ -23,3 +23,7 @@ function determinarNivel(saldoVitorias){
 
     return nivel;
 }
+
+function exibirFeedback(saldoVitorias, nivel){
+    console.log(`O Herói tem um saldo de vitórias de ${saldoVitorias} e está no nível de ${nivel}`);
+}
