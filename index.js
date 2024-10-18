@@ -27,3 +27,13 @@ function determinarNivel(saldoVitorias){
 function exibirFeedback(saldoVitorias, nivel){
     console.log(`O Herói tem um saldo de vitórias de ${saldoVitorias} e está no nível de ${nivel}`);
 }
+
+function main(){
+    let saldoVitorias = determinarSaldoVitorias(90, 2);
+    console.log(saldoVitorias);
+    let nivel = determinarNivel(saldoVitorias);
+    console.log(nivel);
+    exibirFeedback(saldoVitorias, nivel);
+}
+
+main();
