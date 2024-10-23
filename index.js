@@ -24,6 +24,10 @@ function jogarPartidas(partidas){
     return vitorias - derrotas;
 }
 
+/*
+Esta função serve para determinar qual o nível do herói de acordo com o seu saldo de vítorias, utilizei um if-else encadeado para 
+determinar o nível dependendo do saldo de vítorias, de acordo com os valores passados na tabela do desafio.
+*/
 function determinarNivel(saldoVitorias){
     let nivel;
 
@@ -45,10 +49,12 @@ function determinarNivel(saldoVitorias){
     return nivel;
 }
 
+//Esta função serve para exibir a mensagem de feedback para o usuário
 function exibirFeedback(partidas, saldoVitorias, nivel){
     console.log(`O Herói jogou um total de ${partidas} partidas, ficando com um saldo de vitórias de ${saldoVitorias} e no nível de ${nivel}`);
 }
 
+//Esta é a função main(), utilizei para poder realizar as chamadas de todas as funções no mesmo lugar
 function main(){
     let partidasJogadas = 150;
 
@@ -59,4 +65,5 @@ function main(){
     exibirFeedback(partidasJogadas, saldoVitorias, nivel);
 }
 
+//Aqui é a chamada para a função main(), que servirá para chamar todas as outras
 main();
