@@ -1,6 +1,20 @@
-function determinarSaldoVitorias(vitorias, derrotas){
-    let saldoVitorias = vitorias - derrotas;
-    return saldoVitorias;
+function jogarPartidas(partidas){
+    let dado;
+    let vitorias = 0;
+    let derrotas = 0;
+
+    for(let i = 0; i < partidas; i++){
+        dado = Math.floor(Math.random() * 6) + 1;
+
+        if(dado >= 2){
+            vitorias++;
+        }
+        else{
+            derrotas++;
+        }
+    }
+
+    return vitorias - derrotas;
 }
 
 function determinarNivel(saldoVitorias){
@@ -24,16 +38,18 @@ function determinarNivel(saldoVitorias){
     return nivel;
 }
 
-function exibirFeedback(saldoVitorias, nivel){
-    console.log(`O Herói tem um saldo de vitórias de ${saldoVitorias} e está no nível de ${nivel}`);
+function exibirFeedback(partidas, saldoVitorias, nivel){
+    console.log(`O Herói jogou um total de ${partidas} partidas, ficando com um saldo de vitórias de ${saldoVitorias} e no nível de ${nivel}`);
 }
 
 function main(){
-    let saldoVitorias = determinarSaldoVitorias(90, 2);
-    console.log(saldoVitorias);
+    let partidasJogadas = 150;
+
+    let saldoVitorias = jogarPartidas(partidasJogadas);
+
     let nivel = determinarNivel(saldoVitorias);
-    console.log(nivel);
-    exibirFeedback(saldoVitorias, nivel);
+
+    exibirFeedback(partidasJogadas, saldoVitorias, nivel);
 }
 
 main();
